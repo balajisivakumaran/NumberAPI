@@ -20,7 +20,7 @@ app.MapGet("api/v1/numbers", async(AppDbContext context) => {
 app.MapPost("api/v1/numbers", async(AppDbContext context, NumItem numItem) => {
 
     if(numItem is null) return Results.BadRequest();
-
+    else
     await context.Numbers.AddAsync(numItem);
 
     await context.SaveChangesAsync();
